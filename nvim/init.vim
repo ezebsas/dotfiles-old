@@ -35,6 +35,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
@@ -95,6 +98,9 @@ Plug 'jelera/vim-javascript-syntax'
 
 
 "*****************************************************************************
+"Testing of new plugins
+
+Plug 'ctrlpvim/ctrlp.vim'
 "*****************************************************************************
 
 "" Include user's extra bundle
@@ -129,7 +135,7 @@ set shiftwidth=4
 set expandtab
 
 "" Map leader to ,
-let mapleader=','
+let mapleader='\'
 
 "" Enable hidden buffers
 set hidden
@@ -164,6 +170,7 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set number
+set relativenumber
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
@@ -508,3 +515,20 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+" NERDTree tabs
+let g:nerdtree_tabs_open_on_console_startup=1
+"Nerd tree see hidden files
+let NERDTreeShowHidden=1
+
+"===============  MY STUFF ===============
+imap jj <ESC>
+imap xx <ESC>:w<CR>
+imap <leader>f <ESC>A
+map <ESC><ESC> :w<CR>
+
+"Abrir ctrlp con todo
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+tnoremap <Esc> <C-\><C-n>
+nnoremap <leader>o :below 10sp term://$SHELL<cr>i
